@@ -25,3 +25,11 @@
 select {
   height: 100%;
 }
+
+.h-128 {
+  height: 32rem;
+}
+
+.overflow-on {
+  overflow: auto;
+}
