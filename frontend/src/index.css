@@ -33,3 +33,11 @@ select {
 .overflow-on {
   overflow: auto;
 }
+
+.right-custom {
+  right: 22rem;
+}
+
+.bottom-custom {
+  bottom: 11rem;
+}
