@@ -3,8 +3,9 @@ import RouterLink from "../components/RouterLink";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { classNames } from "../assets/utils";
+import slogoUrl from "../assets/sub_logo.svg";
 
-export default function Example() {
+export default function Header() {
   return (
     <Disclosure as="nav" className="bg-gray-800">
       {({ open }) => (
@@ -26,12 +27,12 @@ export default function Example() {
                 <div className="flex flex-shrink-0 items-center">
                   <img
                     className="block h-8 w-auto lg:hidden"
-                    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+                    src={slogoUrl}
                     alt="Your Company"
                   />
                   <img
                     className="hidden h-8 w-auto lg:block"
-                    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+                    src={slogoUrl}
                     alt="Your Company"
                   />
                 </div>
@@ -117,6 +118,11 @@ export default function Example() {
               </div>
             </div>
           </div>
+          <Disclosure.Panel className="sm:hidden">
+            <div className="space-y-1 px-2 pb-3 pt-2">
+              <RouterLink />
+            </div>
+          </Disclosure.Panel>
         </>
       )}
     </Disclosure>

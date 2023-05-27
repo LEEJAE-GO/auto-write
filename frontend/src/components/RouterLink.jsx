@@ -1,14 +1,8 @@
 import { Link, useLocation } from "react-router-dom";
-import { classNames } from "../assets/utils";
+import { navigation, classNames } from "../assets/utils";
 
 export default function RouterLink() {
   const { pathname } = useLocation();
-
-  const navigation = [
-    { name: "Home", href: "/" },
-    { name: "Maker", href: "/Maker" },
-    { name: "BookStore", href: "/BookStore" },
-  ];
 
   return (
     <>

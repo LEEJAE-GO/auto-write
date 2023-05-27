@@ -1,4 +1,5 @@
 import imgUrl from "../assets/jary.png";
+import logoTitleUrl from "../assets/logo_title.svg";
 
 export default function Home() {
   return (
@@ -8,8 +9,10 @@ export default function Home() {
       <div className="mx-auto max-w-2xl lg:max-w-4xl">
         <img
           className="mx-auto h-12"
-          src="https://tailwindui.com/img/logos/workcation-logo-indigo-600.svg"
-          alt=""
+          src={logoTitleUrl}
+          alt="단편소설 Making Story 로고"
+          width="192"
+          height="32"
         />
         <figure className="mt-10">
           <blockquote className="text-center text-xl font-semibold leading-8 text-gray-900 sm:text-2xl sm:leading-9">
