@@ -1,13 +1,20 @@
 import { useState } from "react";
-import { MagnifyingGlassCircleIcon } from "@heroicons/react/24/solid";
+import {
+  MagnifyingGlassCircleIcon,
+  ArrowPathIcon,
+} from "@heroicons/react/24/solid";
 import { getTestAPI } from "../api/service";
 
 export default function InputBox() {
   const [inputValue, setInputValue] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const callApi = async () => {
+    if (isLoading) return;
+    setIsLoading(true);
     const data = await getTestAPI(inputValue);
     console.log(data);
+    setIsLoading(false);
     // await getShortStory();
   };
 
@@ -33,7 +40,11 @@ export default function InputBox() {
           className="absolute inset-y-0 left-0 flex items-center pl-2"
           onClick={handleClick}
         >
-          <MagnifyingGlassCircleIcon className="h-6 w-6 text-black" />
+          {isLoading ? (
+            <ArrowPathIcon className="animate-spin h-6 w-6 text-black" />
+          ) : (
+            <MagnifyingGlassCircleIcon className="h-6 w-6 text-black" />
+          )}
         </span>
         <input
           className="text-black placeholder:italic placeholder:text-slate-600 block bg-white w-full border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:ring-1 sm:text-sm"
